@@ -17,6 +17,7 @@
 }
 body {
   font-family: "Comfortaa", "Pretendard", sans-serif;
+  font-family: "Comfortaa";
   font-size: 18px;
   color: var(--color-black);
   font-weight: 400;
