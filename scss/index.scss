@@ -155,7 +155,7 @@
     height: 64%;
     position: absolute;
     // top: 50%;
-    // transform: translateY(-55%);
+    transform: translateY(-50%);
     border-radius: 200px;
     background-position: center;
     background-position-y: 50%;
@@ -203,6 +203,7 @@
   .main_visual_skills {
     .visual_button_img {
       top: 15%;
+      top: 48%;
       background-image: url("../images/image_1.jpg");
       background-size: 180%;
 
@@ -221,9 +222,12 @@
   }
   .main_visual_profile {
     .visual_button_img {
-      bottom: 31%;
+      // bottom: 31%;
+      // bottom: -1%;
       background-image: url("../images/image_2.jpg");
       background-size: 200%;
+      transform: translateY(50%);
+      bottom: 64%;
 
       &.set {
         bottom: 28%;
@@ -236,6 +240,7 @@
   .main_visual_project {
     .visual_button_img {
       top: 28%;
+      top: 60%;
       background-image: url("../images/image_3.jpg");
       background-size: 350%;
 
@@ -250,8 +255,9 @@
   .main_visual_connect {
     .visual_button_img {
       top: 21%;
+      top: 53%;
       background-image: url("../images/image_4.jpg");
-      background-size: 392%;
+      background-size: 393%;
 
       &.set {
         top: 18%;
@@ -325,4 +331,67 @@
   100% {
     transform: translateX(-200%);
   }
+}
+
+.skill_section {
+  &.fixed_title {
+    padding-top: 90dvh;
+
+    .section_title_wrap {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .section_title_wrap {
+    width: 100%;
+    height: 90dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      font-size: 176px;
+      font-weight: 700;
+    }
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.skill_list_section {
+  width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  .skill_publishing {
+    background-color: #81c784;
+  }
+  .skill_develop {
+    background-color: #90caf9;
+  }
+  .skill_design {
+    background-color: #ce93d8;
+  }
+  .skill_list_box {
+    min-height: 100px;
+    border-radius: 20px;
+    padding: 30px 20px;
+  }
+}
+.skill_image_section {
+  width: 460px;
+}
+.skill_info_section {
+  width: 360px;
 }

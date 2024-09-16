@@ -9,7 +9,7 @@ setTimeout(() => {
 }, 1200);
 setTimeout(() => {
   document.querySelectorAll(".visual_button_img")[3].classList.remove("set");
-}, 1300);
+}, 1400);
 
 const mouseOverVisual = (target) => {
   document
