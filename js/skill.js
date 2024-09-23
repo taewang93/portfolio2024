@@ -1,3 +1,5 @@
+const WH = window.innerHeight;
+
 document.addEventListener("scroll", function () {
   const targetY = document.querySelector(".skill_section");
   const skillTitleWrap = document.querySelector(".section_title_wrap");
@@ -24,4 +26,37 @@ document.addEventListener("scroll", function () {
     skillTitleWrap.style.opacity = opacityValue;
     skillTitle.style.transform = `scale(${scaleValue})`;
   }
+
+  if (
+    window.scrollY >= targetY.offsetTop + WH &&
+    window.scrollY < targetY.offsetTop + WH + WH
+  ) {
+    console.log("11");
+    document.querySelector(".skill_image_publishing").classList.add("on");
+
+    document.querySelector(".skill_image_publishing").classList.remove("off");
+    document.querySelector(".skill_image_develop").classList.remove("on");
+  } else if (
+    window.scrollY >= targetY.offsetTop + WH + WH &&
+    window.scrollY < targetY.offsetTop + WH + WH + WH
+  ) {
+    console.log("22");
+    document.querySelector(".skill_image_publishing").classList.add("off");
+    document.querySelector(".skill_image_develop").classList.add("on");
+
+    document.querySelector(".skill_image_develop").classList.remove("off");
+    document.querySelector(".skill_image_design").classList.remove("on");
+  } else if (window.scrollY >= targetY.offsetTop + WH + WH + WH) {
+    console.log("33");
+    document.querySelector(".skill_image_develop").classList.add("off");
+    document.querySelector(".skill_image_design").classList.add("on");
+  } else {
+    console.log("00");
+    document.querySelector(".skill_image_publishing").classList.remove("on");
+  }
+  console.log(
+    window.scrollY,
+    targetY.offsetTop + WH,
+    targetY.offsetTop + WH + WH
+  );
 });
