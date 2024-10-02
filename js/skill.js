@@ -4,11 +4,18 @@ const targetY = document.querySelector(".skill_section");
 const skillTitleWrap = document.querySelector(".section_title_wrap");
 const skillTitle = document.querySelector(".skills_title");
 
+const pubPerBar = document.querySelectorAll(".pub_per_bar").length;
+const devPerBar = document.querySelectorAll(".dev_per_bar").length;
+const designPerBar = document.querySelectorAll(".design_per_bar").length;
+
 document.addEventListener("scroll", function () {
   let opacityValue = 1 - (window.scrollY - targetY.offsetTop - 100) / 250;
   let scaleValue = 1 - (window.scrollY - targetY.offsetTop - 100) / 1000;
 
-  if (window.scrollY > targetY.offsetTop) {
+  if (
+    window.scrollY > targetY.offsetTop &&
+    window.scrollY < targetY.offsetTop + 3 * WH
+  ) {
     document.querySelector(".skill_section").classList.add("fixed_title");
   } else {
     document.querySelector(".skill_section").classList.remove("fixed_title");
@@ -29,7 +36,7 @@ document.addEventListener("scroll", function () {
   let devOpaVal = (window.scrollY - targetY.offsetTop - WH - WH) / 250;
   let devTopVal =
     (1 - (window.scrollY - targetY.offsetTop - WH - WH) / 250) * 100;
-  let designOpaVal = (window.scrollY - targetY.offsetTop - WH - WH - WH) / 250;
+  let designOpaVal = (window.scrollY - targetY.offsetTop - WH - WH - WH) / 200;
   let designTopVal =
     (1 - (window.scrollY - targetY.offsetTop - WH - WH - WH) / 250) * 100;
 
@@ -37,6 +44,8 @@ document.addEventListener("scroll", function () {
     window.scrollY >= targetY.offsetTop + WH &&
     window.scrollY < targetY.offsetTop + WH + WH
   ) {
+    document.querySelector(".skill_wrap").style.background = "#fafafa";
+
     document.querySelector(".skill_image_publishing").classList.add("on");
     document.querySelector(".skill_image_publishing").classList.remove("off");
     document.querySelector(".skill_image_develop").classList.remove("on");
@@ -52,9 +61,8 @@ document.addEventListener("scroll", function () {
     } else {
       document.querySelector(".skill_info_pub").style.top =
         pubTopVal + 130 + "%";
-      document.querySelector(".skill_info_pub").style.opacity = 2.9 - pubOpaVal;
+      document.querySelector(".skill_info_pub").style.opacity = 2.8 - pubOpaVal;
     }
-    console.log(pubTopVal, pubOpaVal);
   } else if (
     window.scrollY >= targetY.offsetTop + WH + WH &&
     window.scrollY < targetY.offsetTop + WH + WH + WH
@@ -64,31 +72,65 @@ document.addEventListener("scroll", function () {
     document.querySelector(".skill_image_develop").classList.remove("off");
     document.querySelector(".skill_image_design").classList.remove("on");
 
-    document.querySelector(".skill_develop").style.opacity = devOpaVal;
-    if (devTopVal < 15) {
+    if (devTopVal < 15 && devTopVal > -115) {
       document.querySelector(".skill_develop").style.top = "100px";
-    } else {
-      document.querySelector(".skill_develop").style.top = devTopVal + "%";
-    }
-
-    if (devTopVal < 15) {
       document.querySelector(".skill_info_dev").style.top = 0;
+    } else if (devTopVal >= 15) {
+      document.querySelector(".skill_develop").style.opacity = devOpaVal;
+      document.querySelector(".skill_develop").style.top = devTopVal + "%";
       document.querySelector(".skill_info_dev").style.opacity = devOpaVal;
-    } else {
       document.querySelector(".skill_info_dev").style.top = devTopVal + "%";
+    } else {
+      document.querySelector(".skill_info_dev").style.top =
+        devTopVal + 110 + "%";
+      document.querySelector(".skill_info_dev").style.opacity = 2.8 - devOpaVal;
     }
   } else if (window.scrollY >= targetY.offsetTop + WH + WH + WH) {
     document.querySelector(".skill_image_develop").classList.add("off");
     document.querySelector(".skill_image_design").classList.add("on");
 
-    document.querySelector(".skill_design").style.opacity = designOpaVal;
-    if (designTopVal < 32) {
+    if (designTopVal < 32 && designTopVal > -98) {
       document.querySelector(".skill_design").style.top = "200px";
-    } else {
+      document.querySelector(".skill_info_design").style.top = 0;
+    } else if (designTopVal >= 32) {
+      document.querySelector(".skill_design").style.opacity = designOpaVal;
       document.querySelector(".skill_design").style.top = designTopVal + "%";
+      document.querySelector(".skill_info_design").style.opacity = designOpaVal;
+      document.querySelector(".skill_info_design").style.top =
+        designTopVal + "%";
+    } else {
+      document.querySelector(".skill_info_design").style.top =
+        designTopVal + 90 + "%";
+      document.querySelector(".skill_info_design").style.opacity =
+        2.8 - designOpaVal;
     }
   } else {
     document.querySelector(".skill_image_publishing").classList.remove("on");
+  }
+
+  if (window.scrollY >= targetY.offsetTop + WH) {
+    for (let i = 0; i < pubPerBar; i++) {
+      setTimeout(() => {
+        document.querySelectorAll(".pub_per_bar")[i].style.width =
+          document.querySelectorAll(".pub_per_bar")[i].dataset.per + "%";
+      }, i * 200);
+    }
+  }
+  if (window.scrollY >= targetY.offsetTop + WH + WH) {
+    for (let i = 0; i < devPerBar; i++) {
+      setTimeout(() => {
+        document.querySelectorAll(".dev_per_bar")[i].style.width =
+          document.querySelectorAll(".dev_per_bar")[i].dataset.per + "%";
+      }, i * 200);
+    }
+  }
+  if (window.scrollY >= targetY.offsetTop + WH + WH + WH) {
+    for (let i = 0; i < designPerBar; i++) {
+      setTimeout(() => {
+        document.querySelectorAll(".design_per_bar")[i].style.width =
+          document.querySelectorAll(".design_per_bar")[i].dataset.per + "%";
+      }, i * 200);
+    }
   }
 
   let pubSkillVal = (window.scrollY - (targetY.offsetTop + 3 * HWH)) / 300;
@@ -131,3 +173,11 @@ document.addEventListener("scroll", function () {
       200 * (1 - designSkillVal) + "px";
   }
 });
+
+const badgeLength = document.querySelectorAll(".badge_li").length;
+
+for (let i = 0; i < badgeLength; i++) {
+  setTimeout(() => {
+    document.querySelectorAll(".badge_li")[i].classList.add("on");
+  }, 200 * i);
+}
