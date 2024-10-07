@@ -1,15 +1,20 @@
-setTimeout(() => {
-  document.querySelectorAll(".visual_button_img")[0].classList.remove("set");
-}, 1000);
-setTimeout(() => {
-  document.querySelectorAll(".visual_button_img")[1].classList.remove("set");
-}, 1100);
-setTimeout(() => {
-  document.querySelectorAll(".visual_button_img")[2].classList.remove("set");
-}, 1200);
-setTimeout(() => {
-  document.querySelectorAll(".visual_button_img")[3].classList.remove("set");
-}, 1400);
+// setTimeout(() => {
+//   document.querySelectorAll(".visual_button_img")[0].classList.remove("set");
+// }, 1000);
+// setTimeout(() => {
+//   document.querySelectorAll(".visual_button_img")[1].classList.remove("set");
+// }, 1100);
+// setTimeout(() => {
+//   document.querySelectorAll(".visual_button_img")[2].classList.remove("set");
+// }, 1200);
+// setTimeout(() => {
+//   document.querySelectorAll(".visual_button_img")[3].classList.remove("set");
+// }, 1400);
+
+document.querySelectorAll(".visual_button_img")[0].classList.remove("set");
+document.querySelectorAll(".visual_button_img")[1].classList.remove("set");
+document.querySelectorAll(".visual_button_img")[2].classList.remove("set");
+document.querySelectorAll(".visual_button_img")[3].classList.remove("set");
 
 const mouseOverVisual = (target) => {
   document
