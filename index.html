@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    <header class="header">
+    <header class="header on">
       <div class="head_wrapper">
         <h1 class="head_logo">
           <button class="menu_button">Kim Taewang</button>
@@ -23,23 +23,47 @@
         <nav class="head_menu">
           <ul class="menu_list">
             <li class="menu_li">
-              <a href="javascript:;" class="menu_link">
+              <a
+                href="javascript:;"
+                onmouseover="mouseOverVisual(0)"
+                onmouseout="mouseOutVisual(0)"
+                onclick="onClickVisual('visual_section')"
+                class="menu_link"
+              >
+                <span>home</span>
+              </a>
+            </li>
+            <li class="menu_li">
+              <a
+                href="javascript:;"
+                onmouseover="mouseOverVisual(1)"
+                onmouseout="mouseOutVisual(1)"
+                onclick="onClickVisual('skill_section')"
+                class="menu_link"
+              >
                 <span>skills</span>
               </a>
             </li>
             <li class="menu_li">
-              <a href="javascript:;" class="menu_link">
+              <a
+                href="javascript:;"
+                onmouseover="mouseOverVisual(2)"
+                onmouseout="mouseOutVisual(2)"
+                onclick="onClickVisual('profile_section')"
+                class="menu_link"
+              >
                 <span>profile</span>
               </a>
             </li>
             <li class="menu_li">
-              <a href="javascript:;" class="menu_link">
+              <a
+                href="javascript:;"
+                onmouseover="mouseOverVisual(3)"
+                onmouseout="mouseOutVisual(3)"
+                onclick="onClickVisual('project_section')"
+                class="menu_link"
+              >
                 <span>project</span>
-              </a>
-            </li>
-            <li class="menu_li">
-              <a href="javascript:;" class="menu_link">
-                <span>connect</span>
               </a>
             </li>
           </ul>
@@ -59,6 +83,20 @@
                 class="main_visual_button main_visual_skills"
                 onmouseover="mouseOverVisual(0)"
                 onmouseout="mouseOutVisual(0)"
+                onclick="onClickVisual('visual_section')"
+              >
+                <div class="visual_button_img set"></div>
+                <div class="visual_button_text_logo">taewang</div>
+                <div class="visual_button_text">
+                  <span class="clone_text original">home</span>
+                  <span class="clone_text clone">home</span>
+                </div>
+              </li>
+              <li
+                class="main_visual_button main_visual_profile"
+                onmouseover="mouseOverVisual(1)"
+                onmouseout="mouseOutVisual(1)"
+                onclick="onClickVisual('skill_section')"
               >
                 <div class="visual_button_img set"></div>
                 <div class="visual_button_text_logo">taewang</div>
@@ -68,9 +106,10 @@
                 </div>
               </li>
               <li
-                class="main_visual_button main_visual_profile"
-                onmouseover="mouseOverVisual(1)"
-                onmouseout="mouseOutVisual(1)"
+                class="main_visual_button main_visual_project"
+                onmouseover="mouseOverVisual(2)"
+                onmouseout="mouseOutVisual(2)"
+                onclick="onClickVisual('profile_section')"
               >
                 <div class="visual_button_img set"></div>
                 <div class="visual_button_text_logo">taewang</div>
@@ -80,27 +119,16 @@
                 </div>
               </li>
               <li
-                class="main_visual_button main_visual_project"
-                onmouseover="mouseOverVisual(2)"
-                onmouseout="mouseOutVisual(2)"
+                class="main_visual_button main_visual_connect"
+                onmouseover="mouseOverVisual(3)"
+                onmouseout="mouseOutVisual(3)"
+                onclick="onClickVisual('project_section')"
               >
                 <div class="visual_button_img set"></div>
                 <div class="visual_button_text_logo">taewang</div>
                 <div class="visual_button_text">
                   <span class="clone_text original">project</span>
                   <span class="clone_text clone">project</span>
-                </div>
-              </li>
-              <li
-                class="main_visual_button main_visual_connect"
-                onmouseover="mouseOverVisual(3)"
-                onmouseout="mouseOutVisual(3)"
-              >
-                <div class="visual_button_img set"></div>
-                <div class="visual_button_text_logo">taewang</div>
-                <div class="visual_button_text">
-                  <span class="clone_text original">connect</span>
-                  <span class="clone_text clone">connect</span>
                 </div>
               </li>
             </ul>
