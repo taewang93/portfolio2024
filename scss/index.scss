@@ -1057,6 +1057,10 @@
     width: 100%;
     height: 100dvh;
     overflow: hidden;
+
+    @media (max-width: $breakpoint-tablet) {
+      height: 60dvh;
+    }
   }
   .project_text {
     position: absolute;
