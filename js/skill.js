@@ -63,6 +63,8 @@ document.addEventListener("scroll", function () {
         pubTopVal + 130 + "%";
       document.querySelector(".skill_info_pub").style.opacity = 2.8 - pubOpaVal;
     }
+
+    document.querySelector(".skill_develop").style.opacity = 0;
   } else if (
     window.scrollY >= targetY.offsetTop + WH + WH &&
     window.scrollY < targetY.offsetTop + WH + WH + WH
@@ -85,6 +87,8 @@ document.addEventListener("scroll", function () {
         devTopVal + 110 + "%";
       document.querySelector(".skill_info_dev").style.opacity = 2.8 - devOpaVal;
     }
+
+    document.querySelector(".skill_design").style.opacity = 0;
   } else if (window.scrollY >= targetY.offsetTop + WH + WH + WH) {
     document.querySelector(".skill_image_develop").classList.add("off");
     document.querySelector(".skill_image_design").classList.add("on");
