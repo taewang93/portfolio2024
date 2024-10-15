@@ -33,12 +33,12 @@ document.addEventListener("scroll", function () {
 
   let pubOpaVal = (window.scrollY - targetY.offsetTop - WH) / 250;
   let pubTopVal = (1 - (window.scrollY - targetY.offsetTop - WH) / 250) * 100;
-  let devOpaVal = (window.scrollY - targetY.offsetTop - 3 * WH) / 250;
+  let devOpaVal = (window.scrollY - targetY.offsetTop - WH - WH) / 250;
   let devTopVal =
-    (1 - (window.scrollY - targetY.offsetTop - 3 * WH) / 250) * 100;
-  let designOpaVal = (window.scrollY - targetY.offsetTop - 5 * WH) / 200;
+    (1 - (window.scrollY - targetY.offsetTop - WH - WH) / 250) * 100;
+  let designOpaVal = (window.scrollY - targetY.offsetTop - WH - WH - WH) / 200;
   let designTopVal =
-    (1 - (window.scrollY - targetY.offsetTop - 5 * WH) / 250) * 100;
+    (1 - (window.scrollY - targetY.offsetTop - WH - WH - WH) / 250) * 100;
 
   if (
     window.scrollY >= targetY.offsetTop + WH &&
@@ -50,13 +50,9 @@ document.addEventListener("scroll", function () {
     document.querySelector(".skill_image_publishing").classList.remove("off");
     document.querySelector(".skill_image_develop").classList.remove("on");
 
-    console.log(pubTopVal);
-
-    if (pubTopVal > -530 && pubTopVal < 0) {
+    if (pubTopVal > -420 && pubTopVal < 0) {
       document.querySelector(".skill_publishing").style.top = 0;
       document.querySelector(".skill_info_pub").style.top = 0;
-
-      document.querySelector(".skill_info_pub").style.opacity = pubOpaVal;
     } else if (pubTopVal >= 0) {
       document.querySelector(".skill_publishing").style.opacity = pubOpaVal;
       document.querySelector(".skill_publishing").style.top = pubTopVal + "%";
@@ -64,8 +60,8 @@ document.addEventListener("scroll", function () {
       document.querySelector(".skill_info_pub").style.top = pubTopVal + "%";
     } else {
       document.querySelector(".skill_info_pub").style.top =
-        pubTopVal + 530 + "%";
-      document.querySelector(".skill_info_pub").style.opacity = 6.8 - pubOpaVal;
+        pubTopVal + 420 + "%";
+      document.querySelector(".skill_info_pub").style.opacity = 6.1 - pubOpaVal;
     }
 
     document.querySelector(".skill_develop").style.opacity = 0;
@@ -78,11 +74,11 @@ document.addEventListener("scroll", function () {
     document.querySelector(".skill_image_develop").classList.remove("off");
     document.querySelector(".skill_image_design").classList.remove("on");
 
-    if (devTopVal > -515 && devTopVal < 15) {
+    console.log(devTopVal);
+
+    if (devTopVal < 15 && devTopVal > -115) {
       document.querySelector(".skill_develop").style.top = "100px";
       document.querySelector(".skill_info_dev").style.top = 0;
-
-      document.querySelector(".skill_info_dev").style.opacity = devOpaVal;
     } else if (devTopVal >= 15) {
       document.querySelector(".skill_develop").style.opacity = devOpaVal;
       document.querySelector(".skill_develop").style.top = devTopVal + "%";
@@ -90,8 +86,8 @@ document.addEventListener("scroll", function () {
       document.querySelector(".skill_info_dev").style.top = devTopVal + "%";
     } else {
       document.querySelector(".skill_info_dev").style.top =
-        devTopVal + 515 + "%";
-      document.querySelector(".skill_info_dev").style.opacity = 6.8 - devOpaVal;
+        devTopVal + 110 + "%";
+      document.querySelector(".skill_info_dev").style.opacity = 2.8 - devOpaVal;
     }
 
     document.querySelector(".skill_design").style.opacity = 0;
@@ -99,11 +95,9 @@ document.addEventListener("scroll", function () {
     document.querySelector(".skill_image_develop").classList.add("off");
     document.querySelector(".skill_image_design").classList.add("on");
 
-    if (designTopVal > -498 && designTopVal < 32) {
+    if (designTopVal < 32 && designTopVal > -98) {
       document.querySelector(".skill_design").style.top = "200px";
       document.querySelector(".skill_info_design").style.top = 0;
-
-      document.querySelector(".skill_info_design").style.opacity = designOpaVal;
     } else if (designTopVal >= 32) {
       document.querySelector(".skill_design").style.opacity = designOpaVal;
       document.querySelector(".skill_design").style.top = designTopVal + "%";
@@ -112,9 +106,9 @@ document.addEventListener("scroll", function () {
         designTopVal + "%";
     } else {
       document.querySelector(".skill_info_design").style.top =
-        designTopVal + 490 + "%";
+        designTopVal + 90 + "%";
       document.querySelector(".skill_info_design").style.opacity =
-        8.2 - designOpaVal;
+        2.8 - designOpaVal;
     }
   } else {
     document.querySelector(".skill_image_publishing").classList.remove("on");
@@ -145,44 +139,44 @@ document.addEventListener("scroll", function () {
     }
   }
 
-  let pubSkillVal = (window.scrollY - (targetY.offsetTop + 5 * HWH)) / 300;
-  let devSkillVal = (window.scrollY - (targetY.offsetTop + 7 * HWH)) / 300;
-  let designSkillVal = (window.scrollY - (targetY.offsetTop + 9 * HWH)) / 300;
+  let pubSkillVal = (window.scrollY - (targetY.offsetTop + 3 * HWH)) / 300;
+  let devSkillVal = (window.scrollY - (targetY.offsetTop + 5 * HWH)) / 300;
+  let designSkillVal = (window.scrollY - (targetY.offsetTop + 7 * HWH)) / 300;
 
   if (window.scrollY >= targetY.offsetTop + 3 * HWH) {
-    document.querySelector(".pub_skill_ul").style.opacity = 0.9 - pubSkillVal;
-    if (pubSkillVal < 0) {
+    document.querySelector(".pub_skill_ul").style.opacity = 3.4 - pubSkillVal;
+    if (pubSkillVal < 2.5) {
       document.querySelector(".pub_skill_ul").style.bottom = 0;
     } else {
       document.querySelector(".pub_skill_ul").style.bottom =
         10 * pubSkillVal + "px";
     }
     document.querySelector(".skill_list_box_pub").style.height =
-      200 * (1 - pubSkillVal) + "px";
+      200 * (3.5 - pubSkillVal) + "px";
   }
 
   if (window.scrollY >= targetY.offsetTop + 5 * HWH) {
-    document.querySelector(".dev_skill_ul").style.opacity = 3.9 - devSkillVal;
-    if (devSkillVal < 3) {
+    document.querySelector(".dev_skill_ul").style.opacity = 0.9 - devSkillVal;
+    if (devSkillVal < 0) {
       document.querySelector(".dev_skill_ul").style.bottom = 0;
     } else {
       document.querySelector(".dev_skill_ul").style.bottom =
         10 * devSkillVal + "px";
     }
     document.querySelector(".skill_list_box_dev").style.height =
-      200 * (4 - devSkillVal) + "px";
+      200 * (1 - devSkillVal) + "px";
   }
   if (window.scrollY >= targetY.offsetTop + 7 * HWH) {
     document.querySelector(".design_skill_ul").style.opacity =
-      6.9 - designSkillVal;
-    if (designSkillVal < 6.5) {
+      0.9 - designSkillVal;
+    if (designSkillVal < 0) {
       document.querySelector(".design_skill_ul").style.bottom = 0;
     } else {
       document.querySelector(".design_skill_ul").style.bottom =
         10 * designSkillVal + "px";
     }
     document.querySelector(".skill_list_box_design").style.height =
-      200 * (7 - designSkillVal) + "px";
+      200 * (1 - designSkillVal) + "px";
   }
 });
 
