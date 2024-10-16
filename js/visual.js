@@ -17,9 +17,17 @@ const mouseOutVisual = (target) => {
   document.querySelectorAll(".menu_link")[target].classList.remove("hover");
 };
 
+// const header = document.querySelector(".header");
+
 const onClickVisual = (target) => {
   window.scroll({
     behavior: "smooth",
     top: document.querySelector(`.${target}`).offsetTop - 80,
   });
+  // console.log(window.scrollY, document.querySelector(`.${target}`).offsetTop);
+  // if (window.scrollY + 80 >= document.querySelector(`.${target}`).offsetTop) {
+  //   header.classList.add("on");
+  // } else {
+  //   header.classList.remove("on");
+  // }
 };
