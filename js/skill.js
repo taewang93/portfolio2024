@@ -1,3 +1,4 @@
+const WWidth = window.innerWidth;
 const WH = window.innerHeight;
 const HWH = WH / 2;
 const targetY = document.querySelector(".skill_section");
@@ -58,7 +59,12 @@ document.addEventListener("scroll", function () {
     document.querySelector(".skill_info_pub").style.opacity = 6.8 - pubOpaVal;
   }
   if (devTopVal > -515 && devTopVal < 15) {
-    document.querySelector(".skill_develop").style.top = "100px";
+    if (WWidth > 750) {
+      document.querySelector(".skill_develop").style.top = "100px";
+    } else {
+      document.querySelector(".skill_develop").style.top = "75px";
+    }
+
     document.querySelector(".skill_info_dev").style.top = 0;
 
     document.querySelector(".skill_info_dev").style.opacity = devOpaVal;
@@ -68,14 +74,23 @@ document.addEventListener("scroll", function () {
     document.querySelector(".skill_info_dev").style.opacity = devOpaVal;
     document.querySelector(".skill_info_dev").style.top = devTopVal + "%";
   } else {
-    document.querySelector(".skill_develop").style.top = "100px";
+    if (WWidth > 750) {
+      document.querySelector(".skill_develop").style.top = "100px";
+    } else {
+      document.querySelector(".skill_develop").style.top = "75px";
+    }
     document.querySelector(".skill_develop").style.opacity = devOpaVal + 0.2;
 
     document.querySelector(".skill_info_dev").style.top = devTopVal + 515 + "%";
     document.querySelector(".skill_info_dev").style.opacity = 6.8 - devOpaVal;
   }
   if (designTopVal > -498 && designTopVal < 32) {
-    document.querySelector(".skill_design").style.top = "200px";
+    if (WWidth > 750) {
+      document.querySelector(".skill_design").style.top = "200px";
+    } else {
+      document.querySelector(".skill_design").style.top = "150px";
+    }
+
     document.querySelector(".skill_info_design").style.top = 0;
 
     document.querySelector(".skill_info_design").style.opacity = designOpaVal;
@@ -85,7 +100,11 @@ document.addEventListener("scroll", function () {
     document.querySelector(".skill_info_design").style.opacity = designOpaVal;
     document.querySelector(".skill_info_design").style.top = designTopVal + "%";
   } else {
-    document.querySelector(".skill_design").style.top = "200px";
+    if (WWidth > 750) {
+      document.querySelector(".skill_design").style.top = "200px";
+    } else {
+      document.querySelector(".skill_design").style.top = "150px";
+    }
     document.querySelector(".skill_design").style.opacity = designOpaVal + 0.2;
 
     document.querySelector(".skill_info_design").style.top =

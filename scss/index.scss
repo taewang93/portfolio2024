@@ -569,7 +569,7 @@
       padding: 15dvh 20px 0;
     }
     @media (max-width: $breakpoint-mobile) {
-      padding: 20px;
+      padding: 70px 20px 20px 20px;
       flex-direction: column;
     }
   }
@@ -583,6 +583,7 @@
     position: absolute;
     left: 20px;
     top: 50dvh;
+    top: calc(50dvh + 50px);
   }
 
   .skill_list_wrap {
@@ -614,6 +615,9 @@
 
     @media (max-width: $breakpoint-tablet) {
       padding: 15px 10px;
+    }
+    @media (max-width: $breakpoint-mobile) {
+      min-height: 60px;
     }
 
     .skill_list_box_in {
