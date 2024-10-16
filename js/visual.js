@@ -18,16 +18,8 @@ const mouseOutVisual = (target) => {
 };
 
 const onClickVisual = (target) => {
-  if (target == "visual_section") {
-    console.log("aa");
-    window.scroll({
-      behavior: "smooth",
-      top: document.querySelector(`.${target}`).offsetTop - 80,
-    });
-  } else {
-    window.scroll({
-      behavior: "smooth",
-      top: document.querySelector(`.${target}`).offsetTop,
-    });
-  }
+  window.scroll({
+    behavior: "smooth",
+    top: document.querySelector(`.${target}`).offsetTop - 80,
+  });
 };
